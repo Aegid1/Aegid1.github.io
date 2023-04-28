@@ -1,0 +1,27 @@
+# Gradle build files
+.gradle/
+build/
+
+# IntelliJ IDEA files
+.idea/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# PostgreSQL data directory
+pgdata/
+
+# Spring Boot generated files
+/target/
+!/target/*.jar
+!/target/classes/
+
+# Other generated files
+*.iml
+*.log
+.vscode/
+
+
+
