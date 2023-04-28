@@ -9,10 +9,9 @@ import java.sql.SQLException;
 @SpringBootApplication
 public class BananaApplication {
 
-	private final String url = "jdbc:postgresql://localhost/dvdrental";
-	private final String user = "postgres";
-	private final String password = "<add your password>";
-
+	private final String url = System.getenv("POSTGRESQL_URL");
+	private final String user = System.getenv("POSTGRESQL_USERNAME");
+	private final String password = System.getenv("POSTGRESQL_PASSWORD");
 
 	public Connection connect() {
         Connection conn = null;
@@ -25,6 +24,7 @@ public class BananaApplication {
 
         return conn;
     }
+
 
 	public static void main(String[] args) {
 		
