@@ -14,8 +14,9 @@ public class BananaApplication {
 		
 		DBService bananaPie = new DBService();
 		bananaPie.connect();
+		System.out.println(bananaPie.showInfo(1));
 		SpringApplication.run(BananaApplication.class, args);
-
+		
 	}
 
 }
