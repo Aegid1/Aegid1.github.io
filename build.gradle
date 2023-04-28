@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.6'
 	id 'io.spring.dependency-management' version '1.1.0'
-	id 'org.postgresql' version '42.6.0'
+	//id 'org.postgresql' version '42.6.0'
 }
 
 group = 'com.example'
@@ -17,10 +17,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation files('libs/postgresql-42.6.0.jar')
-	implementation 'org.springframework.boot:spring-boot-starter-parent'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	//implementation 'org.springframework.boot:spring-boot-starter-parent'
 	// implementation 'com.sample:postgres'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.postgresql:postgresql'
+	//implementation 'org.postgresql:postgresql: 42.6.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

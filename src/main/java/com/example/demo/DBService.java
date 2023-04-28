@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class DBService {
     
-    private final String url = System.getenv("POSTGRESQL_URL");
-	private final String user = System.getenv("POSTGRESQL_USERNAME");
-	private final String password = System.getenv("POSTGRESQL_PASSWORD");
+    private final String url = System.getenv("$POSTGRESQL_URL");
+	private final String user = System.getenv("$POSTGRESQL_USERNAME");
+	private final String password = System.getenv("$POSTGRESQL_PASSWORD");
 
     @Autowired
     private Connection conn;
