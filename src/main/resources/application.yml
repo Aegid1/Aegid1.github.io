@@ -1,4 +1,8 @@
 spring:
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
   datasource:
     username: ${POSTGRESQL_USERNAME}
     password: ${POSTGRESQL_PASSWORD}
