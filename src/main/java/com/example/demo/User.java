@@ -5,9 +5,6 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import io.micrometer.common.lang.Nullable;
 
 @Entity
 @Table(name = "User")
