@@ -1,3 +1,4 @@
+package com.example.demo.Entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -7,26 +8,33 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-public class User {
+@Entity
+@Table(name = "User")
+public class UserEntity {
 
 //eventuell noch Reihenfolge ändern
 
-    public User(Long id, String firstname, String lastname, String email, String password){
-        this.id = id;
+    public UserEntity(String firstname, String lastname, String email, String password){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column
     private String firstname;
 
+    @Column
     private String lastname;
 
+    @Column
     private String email;
 
+    @Column
     private String password;
 
     public Long getId() {
@@ -47,22 +55,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     

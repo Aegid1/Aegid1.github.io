@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Service;
 
 import java.io.Serial;
 import java.sql.Connection;

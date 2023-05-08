@@ -1,26 +1,15 @@
+package com.example.demo;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+public class UserCreateRequest{
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
-public class User {
-
-//eventuell noch Reihenfolge ändern
-
-    public User(Long id, String firstname, String lastname, String email, String password){
-        this.id = id;
+    public UserCreateRequest(String firstname, String lastname, String email, String password){
+        
         this.firstname = firstname;
         this.lastname = lastname;
-        this.email = email;
-        this.password = password;
+            this.email = email;
+            this.password = password;
     }
 
-    private Long id;
-    
     private String firstname;
 
     private String lastname;
@@ -28,10 +17,6 @@ public class User {
     private String email;
 
     private String password;
-
-    public Long getId() {
-        return id;
-    }
 
     public String getFirstname() {
         return firstname;
@@ -65,7 +50,8 @@ public class User {
         this.password = password;
     }
 
-    
+
 
 
 }
+
