@@ -1,44 +1,80 @@
 package com.example.demo.Entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import javax.persistence.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
-@Entity
-@Table(name = "User")
 public class UserEntity {
 
 //eventuell noch Reihenfolge ändern
 
-    public UserEntity(String firstname, String lastname, String email, String password){
+    public UserEntity(String firstname, 
+                      String lastname, 
+                      String password, 
+                      String country, 
+                      String city, 
+                      String postalcode, 
+                      String address, 
+                      String email){
+
         this.firstname = firstname;
         this.lastname = lastname;
-        this.email = email;
         this.password = password;
+        this.country = country;
+        this.city = city;
+        this.postalcode = postalcode;
+        this.address = address;
+        this.email = email;
+
     }
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Column
     private String firstname;
-
-    @Column
     private String lastname;
-
-    @Column
+    private String password;
+    private String country;
+    private String city;
+    private String postalcode;
+    private String address;
     private String email;
 
-    @Column
-    private String password;
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostalcode() {
+        return postalcode;
+    }
+
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstname() {

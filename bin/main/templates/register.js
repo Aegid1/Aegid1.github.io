@@ -10,8 +10,8 @@ submitButton.addEventListener('click', (event) => {
         email: form.email.value,
         password: form.password.value
     };
-
-    fetch('/users', {
+    
+    fetch('users/user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

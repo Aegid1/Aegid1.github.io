@@ -1,4 +1,7 @@
 spring:
+  #main:
+  #  allow-bean-definition-overriding: true
+#eventuell hier main: ..... weglassen
   thymeleaf:
     cache: false
     mode: HTML
