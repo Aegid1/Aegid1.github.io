@@ -2,6 +2,7 @@ package com.example.demo.Service;
 import com.example.demo.*;
 import com.example.demo.Daos.UserDAO;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -10,22 +11,20 @@ import com.example.demo.Entity.UserEntity;
 @Service
 public class UserService {
     
-    private final JdbcTemplate jdbctemplate;
-    private UserDAO userDAO;
+    private final UserDAO dao;
 
-    public UserService(JdbcTemplate jdbc){ 
-        this.jdbctemplate = jdbc;
-    }
+    @Autowired
+    public UserService(UserDAO dao){ this.dao = dao; }
 
     public UserEntity createUserId(UserEntity user){
 
-        Long max = userDAO.getMaxUserID();
+        Long max = dao.getMaxUserID();
         user.setId(max);
         return user;
     }
 
     public UserEntity addUser(UserEntity user){
-        return userDAO.addUser(user);
+        return dao.addUser(user);
     }
 
     

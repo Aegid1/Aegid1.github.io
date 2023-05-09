@@ -1,15 +1,14 @@
 package com.example.demo.Daos;
 
-import java.sql.ResultSet;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import com.example.demo.Entity.UserEntity;
 
 @Repository
 public class UserDAO {
     
+    @Autowired
     private final JdbcTemplate jdbctemplate;
 
     public UserDAO(JdbcTemplate jdbctemplate){ 
@@ -23,8 +22,7 @@ public class UserDAO {
                     .append("VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)")
                     .toString();
 
-       jdbctemplate.update(sql, user.getId(), 
-                                user.getFirstname(), 
+       jdbctemplate.update(sql, user.getFirstname(), 
                                 user.getLastname(), 
                                 user.getPassword(), 
                                 user.getCountry(), 
@@ -41,7 +39,7 @@ public class UserDAO {
 
         String sql = "SELECT MAX(user_id) FROM user_account";  
         Long max = jdbctemplate.queryForObject(sql, Long.class); 
-        
+
         return max;
     }
 
