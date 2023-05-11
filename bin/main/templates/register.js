@@ -7,8 +7,12 @@ submitButton.addEventListener('click', (event) => {
     const data = {
         firstname: form.firstname.value,
         lastname: form.lastname.value,
+        password: form.password.value,
+        country: form.country.value,
+        city: form.city.value,
+        postalcode: form.postalcode.value,
+        address: form.address.value,
         email: form.email.value,
-        password: form.password.value
     };
     
     fetch('users/user', {

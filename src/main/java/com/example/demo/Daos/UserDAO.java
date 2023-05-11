@@ -43,4 +43,19 @@ public class UserDAO {
         return max;
     }
 
+    public void updateUsername(Long id, String updatedName){
+
+        String sql = "UPDATE user_account SET firstname = ? WHERE user_id = ?";
+        jdbctemplate.update(sql, updatedName, id);
+ 
+    }
+
+    public void updateEmail(Long id, String updatedEmail){
+
+        String sql = "UPDATE user_account SET email = ? WHERE user_id = ?";
+        jdbctemplate.update(sql, updatedEmail, id);
+
+    }
+
+
 }

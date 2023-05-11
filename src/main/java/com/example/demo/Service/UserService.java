@@ -16,16 +16,24 @@ public class UserService {
     @Autowired
     public UserService(UserDAO dao){ this.dao = dao; }
 
-    public UserEntity createUserId(UserEntity user){
+    public UserEntity addUser(UserEntity user){ return dao.addUser(user); }
 
-        Long max = dao.getMaxUserID();
-        user.setId(max);
+    // public UserEntity createUserId(UserEntity user){
+// 
+        // Long max = dao.getMaxUserID();
+        // user.setId(max);
+        // return user;
+    // }
+
+    public UserEntity updateUsername(UserEntity user, String updatedName){ 
+    
+        dao.updateUsername(user.getId(), updatedName);
         return user;
     }
-
-    public UserEntity addUser(UserEntity user){
-        return dao.addUser(user);
-    }
-
     
+    public UserEntity updateEmail(UserEntity user, String updatedEmail){
+
+        dao.updateEmail(user.getId(), updatedEmail);
+        return user;
+    }
 }
