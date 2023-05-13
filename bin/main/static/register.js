@@ -15,7 +15,7 @@ submitButton.addEventListener('click', (event) => {
         email: form.email.value,
     };
     
-    fetch('users/user', {
+    fetch('/user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
