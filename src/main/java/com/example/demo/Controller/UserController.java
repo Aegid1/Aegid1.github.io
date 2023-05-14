@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import com.example.demo.Entity.UserEntity;
 import com.example.demo.Service.UserService;
 
 @RestController
+@CrossOrigin(origins = "https://github.com/Aegid1/Aegid1.github.io/tree/main/src/main/resources/templates")
 public class UserController {
     
     private UserService uService;
@@ -21,7 +23,7 @@ public class UserController {
         this.uService = uService;
     }
 
-    @PostMapping("aegid1.github.io/src/main/resources/templates/registerForm.html")
+    @PostMapping("users")
     public ResponseEntity<Void> createUser(@RequestBody UserEntity user) throws URISyntaxException{
         user = uService.addUser(user);
         URI uri = new URI("/users/user/" + user.getId());

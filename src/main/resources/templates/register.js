@@ -15,7 +15,7 @@ submitButton.addEventListener('click', (event) => {
         email: form.email.value,
     };
     
-    fetch('aegid1.github.io/src/main/resources/templates/registerForm.html', {
+    fetch('http://localhost:8080/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
