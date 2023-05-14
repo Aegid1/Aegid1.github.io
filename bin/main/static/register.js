@@ -15,7 +15,7 @@ submitButton.addEventListener('click', (event) => {
         email: form.email.value,
     };
     
-    fetch('/user', {
+    fetch('src/main/resources/templates/registerForm.html', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
