@@ -28,6 +28,12 @@ submitButton.addEventListener('click', (event) => {
         // Weiterleitung oder Benachrichtigung an den Benutzer hier einfügen
     })
     .catch(error => {
+
+        if (Object.keys(data).length === 0) {
+            console.error('Error: Data is empty!');
+            return;
+        }
+        
         console.log(data);
         console.error(`Error registering user: ${error}`);
         // Fehlerbehandlung hier einfügen
