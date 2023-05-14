@@ -21,7 +21,7 @@ public class UserController {
         this.uService = uService;
     }
 
-    @PostMapping("/user")
+    @PostMapping("aegid1.github.io/src/main/resources/templates/registerForm.html")
     public ResponseEntity<Void> createUser(@RequestBody UserEntity user) throws URISyntaxException{
         user = uService.addUser(user);
         URI uri = new URI("/users/user/" + user.getId());
