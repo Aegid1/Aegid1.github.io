@@ -28,6 +28,7 @@ submitButton.addEventListener('click', (event) => {
         // Weiterleitung oder Benachrichtigung an den Benutzer hier einfügen
     })
     .catch(error => {
+        console.log(data);
         console.error(`Error registering user: ${error}`);
         // Fehlerbehandlung hier einfügen
     });

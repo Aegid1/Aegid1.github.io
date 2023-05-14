@@ -5,6 +5,18 @@ import javax.persistence.*;
 public class UserEntity {
 
 //eventuell noch Reihenfolge ändern
+    private Long id;
+    private String firstname;
+    private String lastname;
+    private String password;
+    private String country;
+    private String city;
+    private String postalcode;
+    private String address;
+    private String email;
+
+    //standard constructor
+    public UserEntity(){ }
 
     public UserEntity(String firstname, 
                       String lastname, 
@@ -25,16 +37,6 @@ public class UserEntity {
         this.email = email;
 
     }
-
-    private Long id;
-    private String firstname;
-    private String lastname;
-    private String password;
-    private String country;
-    private String city;
-    private String postalcode;
-    private String address;
-    private String email;
 
     public String getCountry() {
         return country;
