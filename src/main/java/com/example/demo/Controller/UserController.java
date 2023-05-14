@@ -14,7 +14,7 @@ import com.example.demo.Entity.UserEntity;
 import com.example.demo.Service.UserService;
 
 @RestController
-@CrossOrigin(origins = "https://github.com/Aegid1/Aegid1.github.io/tree/main/src/main/resources/templates")
+@CrossOrigin(origins = "https://github.com/Aegid1/Aegid1.github.io/tree/main/")
 public class UserController {
     
     private UserService uService;
