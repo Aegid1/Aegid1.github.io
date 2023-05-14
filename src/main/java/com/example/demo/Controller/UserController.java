@@ -14,7 +14,7 @@ import com.example.demo.Entity.UserEntity;
 import com.example.demo.Service.UserService;
 
 @RestController
-@CrossOrigin(origins = "https://github.com/Aegid1/Aegid1.github.io/tree/main/")
+@CrossOrigin(origins = "https://Aegid1.github.io")
 public class UserController {
     
     private UserService uService;
@@ -23,7 +23,7 @@ public class UserController {
         this.uService = uService;
     }
 
-    @PostMapping("users")
+    @PostMapping("/users")
     public ResponseEntity<Void> createUser(@RequestBody UserEntity user) throws URISyntaxException{
         user = uService.addUser(user);
         URI uri = new URI("/users/user/" + user.getId());
