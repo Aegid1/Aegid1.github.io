@@ -1,7 +1,5 @@
 package com.example.demo.Entity;
 
-import javax.persistence.*;
-
 public class UserEntity {
 
     private Long id;

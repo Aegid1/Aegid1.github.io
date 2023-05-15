@@ -1,9 +1,7 @@
 package com.example.demo.Service;
-import com.example.demo.*;
 import com.example.demo.Daos.UserDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.UserEntity;
