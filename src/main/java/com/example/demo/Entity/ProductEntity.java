@@ -8,12 +8,14 @@ public class ProductEntity {
     private double price;
     //-> eventuell hier ENUM verwenden
     private String Status;
+    private String image;
 
-    public ProductEntity(String name, double price, String status){
+    public ProductEntity(String name, double price, String status, String image){
 
         this.productName = name;
         this.price = price;
         this.Status = status;
+        this.image = image;
         
     }
 
@@ -47,6 +49,18 @@ public class ProductEntity {
         Status = status;
     }
 
-    
+
+
+    public String getImage() {
+        return image;
+    }
+
+
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+        
 
 }

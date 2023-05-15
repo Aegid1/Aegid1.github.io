@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 public class UserEntity {
 
-//eventuell noch Reihenfolge ändern
     private Long id;
     private String firstname;
     private String lastname;
