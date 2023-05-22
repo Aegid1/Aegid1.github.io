@@ -30,8 +30,16 @@ public class UserService {
     }
     
     public UserEntity updateEmail(UserEntity user, String updatedEmail){
-
+        
         dao.updateEmail(user.getId(), updatedEmail);
         return user;
     }
+
+    //checks if a email already exists in db, and returns false if db contains email
+    public boolean checkEmail(UserEntity user){
+
+        if(dao.getAllEmails().contains(user.getEmail())){ return false;}
+
+        return true;
+    }   
 }

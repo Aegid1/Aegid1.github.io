@@ -4,7 +4,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,8 +23,12 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<Void> createUser(@RequestBody UserEntity user) throws URISyntaxException{
+    public ResponseEntity<String> createUser(@RequestBody UserEntity user) throws URISyntaxException{
         user = uService.addUser(user);
+
+        //checks if the email already exists
+        if(uService.checkEmail(user) == false){ return ResponseEntity.badRequest().body("The email already exists."); }
+
         URI uri = new URI("/users/user/" + user.getId());
         
         return ResponseEntity.created(uri).build(); 

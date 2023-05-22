@@ -14,15 +14,20 @@ submitButton.addEventListener('click', (event) => {
         address: form.address.value,
         email: form.email.value,
     };
-    
-    fetch('http://localhost:8080/users', {
+
+    fetch('https://Aegid1.github.io/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error registering user');
+        }
+        return response.json();
+    })
     .then(user => {
         console.log(`User ${user.id} successfully registered!`);
         // Weiterleitung oder Benachrichtigung an den Benutzer hier einfügen
@@ -33,9 +38,14 @@ submitButton.addEventListener('click', (event) => {
             console.error('Error: Data is empty!');
             return;
         }
-        
+
         console.log(data);
         console.error(`Error registering user: ${error}`);
         // Fehlerbehandlung hier einfügen
+        if (error.message === 'Error registering user') {
+            console.log('test');
+            alert('The email already exists.');
+        }
+
     });
 });

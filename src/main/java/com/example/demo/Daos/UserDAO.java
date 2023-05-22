@@ -1,5 +1,7 @@
 package com.example.demo.Daos;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -57,5 +59,11 @@ public class UserDAO {
 
     }
 
+    public List<String> getAllEmails(){
 
+        String sql = "SELECT email FROM user_account";
+        List<String> email = jdbctemplate.queryForList(sql, String.class); 
+
+        return email;        
+    }
 }
