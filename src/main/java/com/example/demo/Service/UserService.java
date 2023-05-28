@@ -37,7 +37,8 @@ public class UserService {
 
     //checks if a email already exists in db, and returns false if db contains email
     public boolean checkEmail(UserEntity user){
-
+        
+        System.out.println(dao.getAllEmails().size());
         if(dao.getAllEmails().contains(user.getEmail())){ return false;}
 
         return true;

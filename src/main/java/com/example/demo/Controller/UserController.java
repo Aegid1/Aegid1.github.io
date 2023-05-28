@@ -24,10 +24,11 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<String> createUser(@RequestBody UserEntity user) throws URISyntaxException{
-        user = uService.addUser(user);
 
         //checks if the email already exists
         if(uService.checkEmail(user) == false){ return ResponseEntity.badRequest().body("The email already exists."); }
+        
+        user = uService.addUser(user);
 
         URI uri = new URI("/users/user/" + user.getId());
         

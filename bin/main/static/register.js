@@ -15,7 +15,7 @@ submitButton.addEventListener('click', (event) => {
         email: form.email.value,
     };
 
-    fetch('https://Aegid1.github.io/users', {
+    fetch('https://localhost:8080/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
